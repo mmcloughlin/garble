@@ -34,6 +34,10 @@ def handle_int(x):
     return random.randrange(10**(digits-1), 10**digits)
 
 
+def handle_bool(x):
+    return random.choice([False, True])
+
+
 UUID4_REGEX = re.compile('^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$')
 
 def is_uuid4(x):
@@ -55,6 +59,7 @@ HANDLERS = [
         (type_predicate(unicode), handle_str),
         (type_predicate(long), handle_int),
         (type_predicate(int), handle_int),
+        (type_predicate(bool), handle_bool),
         ]
 
 
