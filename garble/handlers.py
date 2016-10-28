@@ -32,6 +32,7 @@ HANDLERS = [
         (type_predicate(dict), handle_dict),
         (type_predicate(list), handle_list),
         (type_predicate(str), handle_str),
+        (type_predicate(unicode), handle_str),
         (type_predicate(int), handle_int),
         ]
 
