@@ -15,4 +15,6 @@ setup(name='garble',
       author='Michael McLoughlin',
       author_email='mmcloughlin@gmail.com',
       license='MIT',
+      test_suite='nose.collector',
+      tests_require=['nose'],
       )
