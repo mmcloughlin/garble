@@ -9,12 +9,10 @@ def type_predicate(type_):
 
 
 def handle_dict(x):
-    print 'handle_dict'
     return {k: garble(v) for k, v in x.items()}
 
 
 def handle_list(x):
-    print 'handle_list'
     return [garble(v) for v in x]
 
 
@@ -24,14 +22,16 @@ def random_string(n, alphabet=string.letters):
 
 
 def handle_str(x):
-    print 'handle_str:', x
     return random_string(len(x))
 
 
 def handle_int(x):
-    print 'handle_int:', x
     digits = len(str(x))
     return random.randrange(10**(digits-1), 10**digits)
+
+
+def handle_float(x):
+    return x * random.uniform(0, 2)
 
 
 def handle_bool(x):
@@ -47,7 +47,6 @@ def is_uuid4(x):
 
 
 def handle_uuid4(x):
-    print 'handle_uuid:', x
     return str(uuid.uuid4())
 
 
@@ -60,6 +59,7 @@ HANDLERS = [
         (type_predicate(long), handle_int),
         (type_predicate(int), handle_int),
         (type_predicate(bool), handle_bool),
+        (type_predicate(float), handle_float),
         ]
 
 
@@ -67,4 +67,4 @@ def garble(x):
     for predicate, handler in HANDLERS:
         if predicate(x):
             return handler(x)
-    return None
+    raise Exception('unhandled value')
