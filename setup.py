@@ -15,6 +15,11 @@ setup(name='garble',
       author='Michael McLoughlin',
       author_email='mmcloughlin@gmail.com',
       license='MIT',
+      entry_points={
+          'console_scripts': [
+              'garble = garble.__main__:main',
+              ]
+          },
       test_suite='nose.collector',
       tests_require=['nose'],
       )
