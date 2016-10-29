@@ -2,7 +2,13 @@
 
 Randomize your data
 
-## CLI
+## Install
+
+```
+python setup.py install
+```
+
+## CLI Usage
 
 Here's `input.json`
 
@@ -33,22 +39,22 @@ You get something like
 
 ```json
 {
-    "bool": true,
-    "date": "2041-08-12T17:05:36+00:00",
-    "float": 2.8047753673186078,
-    "integer": 39,
+    "bool": false,
+    "date": "2015-10-16T15:31:47+00:00",
+    "float": 0.6366413658409333,
+    "integer": 68,
     "list": [
         7,
-        "z",
-        4
+        "E",
+        8
     ],
     "none": null,
-    "string": "TEoBECQaRjDT",
-    "uuid": "02a97104-e323-47ee-a539-41dc8ff04b80"
+    "string": "cgmnaQwclPmM",
+    "uuid": "c575987b-9f5c-4e5f-8606-f5b896fced1c"
 }
 ```
 
-## Usage
+## Library Usage
 
 ```python
 import garble
