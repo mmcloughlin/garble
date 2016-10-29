@@ -20,6 +20,10 @@ setup(name='garble',
               'garble = garble.__main__:main',
               ]
           },
+      install_requires=[
+          'iso8601',
+          'pytz',
+          ],
       test_suite='nose.collector',
       tests_require=['nose'],
       )

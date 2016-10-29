@@ -2,6 +2,10 @@ import string
 import random
 import re
 import uuid
+import datetime
+
+import iso8601
+import pytz
 
 
 def type_predicate(type_):
@@ -50,10 +54,27 @@ def handle_uuid4(x):
     return str(uuid.uuid4())
 
 
+def is_date(x):
+    if type(x) not in [str, unicode]:
+        return False
+    try:
+        iso8601.parse_date(x)
+    except:
+        return False
+    return True
+
+
+def handle_date(x):
+    epoch = random.getrandbits(32)
+    date = datetime.datetime.fromtimestamp(epoch, pytz.utc)
+    return date.isoformat()
+
+
 HANDLERS = [
         (type_predicate(dict), handle_dict),
         (type_predicate(list), handle_list),
         (is_uuid4, handle_uuid4),
+        (is_date, handle_date),
         (type_predicate(str), handle_str),
         (type_predicate(unicode), handle_str),
         (type_predicate(long), handle_int),
