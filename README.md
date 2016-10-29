@@ -2,6 +2,39 @@
 
 Randomize your data
 
+## CLI
+
+Here's `input.json`
+
+```json
+{
+    "bool": true,
+    "date": "2016-10-29T17:14:18+00:00",
+    "float": 3.141592,
+    "integer": 42,
+    "list": [
+        1,
+        "a",
+        3
+    ],
+    "none": null,
+    "string": "Hello World!",
+    "uuid": "3ee0c4c1-e852-4735-b6c5-7fd7af6ee998"
+}
+```
+
+Run
+
+```
+$ garble --input input.json --output output.json
+```
+
+You get something like
+
+```json
+{"none": null, "string": "bqwRTLYXhUdd", "float": 3.9680427329168895, "list": [8, "R", 4], "bool": false, "date": "2078-09-21T18:54:20+00:00", "integer": 55, "uuid": "37c2bf6d-af4b-400f-83e0-dc0355149902"}
+```
+
 ## Usage
 
 ```python

@@ -1,0 +1,14 @@
+{
+    "bool": true,
+    "date": "2016-10-29T17:14:18+00:00",
+    "float": 3.141592,
+    "integer": 42,
+    "list": [
+        1,
+        "a",
+        3
+    ],
+    "none": null,
+    "string": "Hello World!",
+    "uuid": "3ee0c4c1-e852-4735-b6c5-7fd7af6ee998"
+}
