@@ -6,7 +6,7 @@ Randomize your data
 Usage
 -----
 
-```lang=python
+```python
 import garble
 import pprint
 
