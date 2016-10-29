@@ -26,13 +26,26 @@ Here's `input.json`
 Run
 
 ```
-$ garble --input input.json --output output.json
+$ garble < input.json | python -m json.tool
 ```
 
 You get something like
 
 ```json
-{"none": null, "string": "bqwRTLYXhUdd", "float": 3.9680427329168895, "list": [8, "R", 4], "bool": false, "date": "2078-09-21T18:54:20+00:00", "integer": 55, "uuid": "37c2bf6d-af4b-400f-83e0-dc0355149902"}
+{
+    "bool": true,
+    "date": "2041-08-12T17:05:36+00:00",
+    "float": 2.8047753673186078,
+    "integer": 39,
+    "list": [
+        7,
+        "z",
+        4
+    ],
+    "none": null,
+    "string": "TEoBECQaRjDT",
+    "uuid": "02a97104-e323-47ee-a539-41dc8ff04b80"
+}
 ```
 
 ## Usage

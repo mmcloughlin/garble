@@ -6,7 +6,7 @@ README.md: output.json example.py example.py.out
 	j2 $< > $@
 
 output.json: input.json
-	garble --input $< --output $@
+	garble < input.json | python -m json.tool > $@
 
 %.py.out: %.py
 	python $< > $@
