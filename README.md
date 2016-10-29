@@ -1,10 +1,8 @@
-garble
-======
+# garble
 
 Randomize your data
 
-Usage
------
+## Usage
 
 ```python
 import garble
