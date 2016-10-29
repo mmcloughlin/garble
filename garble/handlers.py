@@ -3,6 +3,7 @@ import random
 import re
 import uuid
 import datetime
+import types
 
 import iso8601
 import pytz
@@ -40,6 +41,10 @@ def handle_float(x):
 
 def handle_bool(x):
     return random.choice([False, True])
+
+
+def handle_none(x):
+    return None
 
 
 UUID4_REGEX = re.compile('^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$')
@@ -81,6 +86,7 @@ HANDLERS = [
         (type_predicate(int), handle_int),
         (type_predicate(bool), handle_bool),
         (type_predicate(float), handle_float),
+        (type_predicate(types.NoneType), handle_none),
         ]
 
 
